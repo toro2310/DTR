@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ELIMINAR</title>
+</head>
+<body>
+        
+                <h2>BIENVENIDO ADMINISTRADOR</h2>
+                <form action="" method="POST">
+
+                    {% csrf_token %}
+
+                    <table>
+
+                    {{ form.as_table }}
+
+                    </table>
+                   
+                    
+                    
+                  
+        
+                    <button type="submit" value="delete">ELIMINAR</button>
+                    
+        
+                </form>
+                 
+                           
+
+</body>
+</html>

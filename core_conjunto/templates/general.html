@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>GENERAL</title>
+	 <style>
+.content {
+  max-width: 900px;
+  margin: auto;
+  background-color: coral;
+}
+</style>
+</head>
+<body>
+	<div class="content">
+    
+
+      <h1>BIENVENIDO ADMINISTRADOR</h1>
+      <h2>EN ESTE ESPACIO PUEDE VER LA INFORMACION DE SUS USUARIOS</h2>
+      <TABLE style="border: 2px solid darkblue">
+      	<THEAD>
+      		<TR>
+      			<TH>ID</TH>
+      			<TH>NOMBRE</TH>
+      			<TH>APELLIDO</TH>
+      			<TH>TELEFONO</TH>
+      			<TH>OPCIONES</TH>	
+      		</TR>
+      	</THEAD>
+
+      	{% for administracion in general %}
+      	<TBODY>
+      		<TD>{{ administracion.id}}</TD>
+      		<TD>{{ administracion.nombre}}</TD>
+      		<TD>{{ administracion.apellido}}</TD>
+      		<TD>{{ administracion.telefono}}</TD>
+      		<TD><a href="{% url 'modificar' administracion.id %}"> EDITAR </a><a href="{% url 'eliminar' administracion.id %}">ELIMINAR</a><a href="{% url 'registrar'  %}"> CREAR </a></TD>
+      	</TBODY>
+      	{% endfor %}
+
+      </TABLE>
+    </div>
+</body>
+</html>
